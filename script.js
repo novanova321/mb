@@ -81,8 +81,8 @@
     const blues = urlParams.get('blues');
     if (blues && !isNaN(blues)) {
       $blues.value = blues;
-      calculate(blues);
     }
+    calculate($blues.value);
   };
 
   checkUrl();
