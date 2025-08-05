@@ -20,71 +20,70 @@
 
   const calculate = (count) => {
     const needed = [
-        ['Plank', count * 6],
-        ['Reinforced Plank', count * 15],
-        ['Iron Ingot', count * 9],
-        ['Dark Silver Ingot', count * 18],
-        ['Gold Ingot', count * 9],
-        ['Radium Alloy', count * 6],
-        ['Regular Gem', count],
-        ['Flawless Gem', count],
-        ['Greater Blood Essence', count * 4],
-        ['Primal Blood Essence', count * 2],
+      ['Plank', count * 6],
+      ['Reinforced Plank', count * 15],
+      ['Iron Ingot', count * 9],
+      ['Dark Silver Ingot', count * 18],
+      ['Gold Ingot', count * 9],
+      ['Radium Alloy', count * 6],
+      ['Regular Gem', count],
+      ['Flawless Gem', count],
+      ['Greater Blood Essence', count * 4],
+      ['Primal Blood Essence', count * 2],
     ];
 
     clearChild($needed);
     for (const [name, val] of needed) {
-        const item = document.createElement('li');
-        item.innerText = `${val} ${name}`;
-        $needed.appendChild(item);
+      const item = document.createElement('li');
+      item.innerText = `${val} ${name}`;
+      $needed.appendChild(item);
     }
 
     const dropped = [
-        ['Iron Ingot', count * 23],
-        ['Plank', count * 22],
-        ['Reinforced Plank', count * 37],
-        ['Dark Silver Ingot', count * 37],
-        ['Gold Ingot', count * 16],
-        ['Gem Dust', count * 319],
+      ['Iron Ingot', count * 23],
+      ['Plank', count * 22],
+      ['Reinforced Plank', count * 37],
+      ['Dark Silver Ingot', count * 37],
+      ['Gold Ingot', count * 16],
+      ['Gem Dust', count * 319],
     ];
 
     clearChild($dropped);
     for (const [name, val] of dropped) {
-        const item = document.createElement('li');
-        item.innerText = `${val} ${name}`;
-        $dropped.appendChild(item);
+      const item = document.createElement('li');
+      item.innerText = `${val} ${name}`;
+      $dropped.appendChild(item);
     }
 
     const gains = [
-        ['Iron Ingot', count * 14],
-        ['Plank', count * 16],
-        ['Reinforced Plank', count * 22],
-        ['Dark Silver Ingot', count * 19],
-        ['Gold Ingot', count * 7],
-        ['Gem Dust', count * 319],
+      ['Iron Ingot', count * 14],
+      ['Plank', count * 16],
+      ['Reinforced Plank', count * 22],
+      ['Dark Silver Ingot', count * 19],
+      ['Gold Ingot', count * 7],
+      ['Gem Dust', count * 319],
     ];
 
     clearChild($gains);
     for (const [name, val] of gains) {
-        const item = document.createElement('li');
-        item.innerText = `${val} ${name}`;
-        $gains.appendChild(item);
+      const item = document.createElement('li');
+      item.innerText = `${val} ${name}`;
+      $gains.appendChild(item);
     }
   };
 
   const clearChild = (node) => {
-    while (node.lastElementChild)
-        node.removeChild(node.lastElementChild);
+    while (node.lastElementChild) node.removeChild(node.lastElementChild);
   };
 
   const checkUrl = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const blues = urlParams.get('blues');
     if (blues && !isNaN(blues)) {
-        $blues.value = blues;
-        calculate(blues);
+      $blues.value = blues;
+      calculate(blues);
     }
-  }
+  };
 
   checkUrl();
 })();
