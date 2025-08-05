@@ -80,7 +80,7 @@
   const checkUrl = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const blues = urlParams.get('blues');
-    if (!isNaN(blues)) {
+    if (blues && !isNaN(blues)) {
         $blues.value = blues;
         calculate(blues);
     }
